@@ -5,15 +5,17 @@
   "author": "Jin Ke <jinkebj@126.com>",
   "private": true,
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon",
-    "start": "node index.js"
+    "dev": "./node_modules/.bin/nodemon --exec 'npm run lint && node index.js'",
+    "start": "node index.js",
+    "lint": "./node_modules/.bin/standard"
   },
   "license": "MIT",
   "dependencies": {
     "koa": "^2.3.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "standard": "^10.0.2"
   },
   "engines": {
     "node": ">=7.6.x"
