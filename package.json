@@ -5,9 +5,10 @@
   "author": "Jin Ke <jinkebj@126.com>",
   "private": true,
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon --exec 'npm run lint && node index.js'",
-    "start": "node index.js",
-    "lint": "./node_modules/.bin/standard"
+    "dev": "nodemon --exec 'npm run lint && node index.js'",
+    "build": "standard && webpack",
+    "start": "npm run build && node dist/app.bundle.js",
+    "lint": "standard"
   },
   "license": "MIT",
   "dependencies": {
@@ -15,7 +16,10 @@
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
-    "standard": "^10.0.2"
+    "standard": "^10.0.2",
+    "uglify-es-webpack-plugin": "0.0.2",
+    "webpack": "^3.0.0",
+    "webpack-node-externals": "^1.6.0"
   },
   "engines": {
     "node": ">=7.6.x"

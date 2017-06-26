@@ -1,6 +1,12 @@
 # Koa Rest Skeleton
 
-> Koa Rest Service Skeleton using ES2017 async functions
+Minimal Koa Rest Service Skeleton with following features:
+
+- built on Node.js 8.x & Koa 2.x
+- using ES2017 async functions
+- integrate nodemon for debug mode with hot reload
+- integrate standard JS for coding rule
+- utilize webpack to generate release file for production env
 
 ## Quick Start
 
@@ -13,6 +19,9 @@ npm install
 
 # run in debug mode with hot reload
 npm run dev
+
+# build minimized release for production env
+npm run build
 
 # run in production mode
 npm start
