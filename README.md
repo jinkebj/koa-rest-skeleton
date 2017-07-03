@@ -3,6 +3,7 @@
 Minimal Koa Rest Service Skeleton with following features:
 
 - built on Node.js 8.x & Koa 2.x
+- support multipart, urlencoded and json request
 - using ES2017 async functions
 - integrate nodemon for debug mode with hot reload
 - integrate standard JS for coding rule
