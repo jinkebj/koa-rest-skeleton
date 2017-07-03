@@ -1,5 +1,10 @@
+const SERVER_PORT = 3000
+
 const Koa = require('koa')
+const KoaRouter = require('koa-router')
+
 const app = new Koa()
+const router = new KoaRouter()
 
 // x-response-time
 app.use(async function (ctx, next) {
@@ -17,9 +22,14 @@ app.use(async function (ctx, next) {
   console.log(`${ctx.method} ${ctx.url} - ${ms}ms`)
 })
 
-// response
-app.use(ctx => {
-  ctx.body = 'Hello World!'
+// router
+app.use(router.routes()).use(router.allowedMethods())
+
+router.get('/', ctx => {
+  ctx.body = {
+    result: 'success',
+    content: 'Hello World!'
+  }
 })
 
-app.listen(3000, () => console.log('server started 3000'))
+app.listen(SERVER_PORT, () => console.log('server started ' + SERVER_PORT))
